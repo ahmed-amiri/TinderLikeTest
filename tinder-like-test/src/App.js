@@ -4,7 +4,6 @@ import TinderLikeCards from './TinderLikeCards';
 function App() {
   return (
     <div className="App">
-      {/* header */}
 
       {/* cards */}
         <TinderLikeCards>

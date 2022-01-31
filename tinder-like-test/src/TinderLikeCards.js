@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import TinderCard from "react-tinder-card";
+import './TinderLikeCards.css';
 
 function TinderLikeCards() {
     //init variables for cards
@@ -19,13 +20,15 @@ function TinderLikeCards() {
     ]);
     return (
         <div>
-            {people.map(person => (
-                <TinderCard>
-                    <div style={{backgroundImage: `url(${person.url})`}} className="card">
-                        <h3>{person.title}</h3>
-                    </div>
-                </TinderCard>
-            ))}
+            <div className="container">
+                {people.map(person => (
+                    <TinderCard className="swipeCard" key={person.id} preventSwipe={['up','down']}>
+                        <div style={{backgroundImage: `url(${person.url})`}} className="card">
+                            <h3>{person.title}</h3>
+                        </div>
+                    </TinderCard>
+                ))}
+            </div>
         </div>
     )
 }
